@@ -1,0 +1,9 @@
+ARQUIVOS PARA O GITHUB
+
+1. Abra assets/js/script.js.
+2. Substitua 5500000000000 pelo WhatsApp das inscrições.
+3. Envie todos os arquivos e pastas deste pacote para a raiz do repositório.
+4. Ative o GitHub Pages em Settings > Pages > Deploy from a branch > main > /(root).
+
+O site é estático e não precisa de banco de dados.
+O formulário abre o WhatsApp com os dados preenchidos.

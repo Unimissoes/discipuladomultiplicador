@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Capacitação em Discipulado — uma jornada bíblica, prática e multiplicadora para pastores, líderes e igrejas."
+  />
+  <meta name="theme-color" content="#0b2b45" />
+  <title>Capacitação em Discipulado</title>
+
+  <style>
+:root {
+  --primary: #123b5d;
+  --primary-dark: #0b2b45;
+  --accent: #e3a72f;
+  --accent-dark: #c58a17;
+  --light: #f6f8fa;
+  --white: #ffffff;
+  --text: #24323d;
+  --muted: #62717d;
+  --success: #137a4b;
+  --danger: #a12622;
+  --border: #dce4e9;
+  --shadow: 0 18px 50px rgba(13, 42, 65, 0.12);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.topbar {
+  background: var(--primary-dark);
+  color: var(--white);
+  font-size: 0.92rem;
+  text-align: center;
+  padding: 10px 16px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.nav-links > a:not(.btn):hover,
+.nav-links > a:not(.btn):focus-visible {
+  color: var(--accent-dark);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(227, 167, 47, 0.55);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #271a00;
+}
+
+.btn-primary:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary:hover {
+  background: #edf3f7;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(110deg, rgba(11, 43, 69, 0.97), rgba(18, 59, 93, 0.89)),
+    radial-gradient(circle at top right, #376d90 0, transparent 36%);
+  padding: 92px 0 80px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  right: -130px;
+  bottom: -210px;
+  background: rgba(227, 167, 47, 0.15);
+}
+
+.hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.87);
+  margin-bottom: 30px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.hero-card h2 {
+  color: var(--white);
+  font-size: 1.55rem;
+  margin-bottom: 18px;
+}
+
+.hero-list {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.hero-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.check {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #2b1d00;
+  font-weight: 900;
+  margin-top: 2px;
+}
+
+section {
+  padding: 82px 0;
+}
+
+.section-header {
+  max-width: 760px;
+  margin-bottom: 42px;
+}
+
+.section-header.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  color: var(--primary-dark);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(13, 42, 65, 0.06);
+}
+
+.card-number {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #e8f0f5;
+  color: var(--primary);
+  border-radius: 12px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: var(--primary-dark);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.light-section {
+  background: var(--light);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  align-items: center;
+}
+
+.feature-panel {
+  background: var(--primary);
+  color: var(--white);
+  padding: 36px;
+  border-radius: var(--radius);
+}
+
+.feature-panel h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.feature-panel ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.feature-panel li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.feature-panel li:last-child {
+  border-bottom: 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.step {
+  padding: 26px 22px;
+  border-top: 5px solid var(--accent);
+  background: var(--white);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 10px 30px rgba(13, 42, 65, 0.08);
+}
+
+.step strong {
+  display: block;
+  color: var(--primary);
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.cta {
+  background: var(--primary-dark);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta h2 {
+  color: var(--white);
+}
+
+.cta p {
+  max-width: 720px;
+  margin: 0 auto 26px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.registration {
+  background: linear-gradient(180deg, var(--light), var(--white));
+}
+
+.registration-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.info-box {
+  background: var(--primary);
+  color: var(--white);
+  padding: 34px;
+  border-radius: var(--radius);
+  position: sticky;
+  top: 110px;
+}
+
+.info-box h2 {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.info-list {
+  list-style: none;
+  display: grid;
+  gap: 15px;
+  margin-top: 24px;
+}
+
+.info-list li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.form-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.form-card h3 {
+  color: var(--primary-dark);
+  font-size: 1.65rem;
+  margin-bottom: 8px;
+}
+
+.form-card > p {
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 7px;
+  color: var(--primary-dark);
+  font-size: 0.94rem;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 15px;
+  font: inherit;
+  color: var(--text);
+  background: var(--white);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(18, 59, 93, 0.10);
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.consent input {
+  width: auto;
+  margin-top: 4px;
+}
+
+.form-status {
+  display: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-weight: 700;
+}
+
+.form-status.is-visible {
+  display: block;
+}
+
+.form-status.success {
+  background: #e9f6ef;
+  color: var(--success);
+  border: 1px solid #bfe4cf;
+}
+
+.form-status.error {
+  background: #fff0ef;
+  color: var(--danger);
+  border: 1px solid #efc3c0;
+}
+
+footer {
+  background: #071f33;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 34px 0;
+  text-align: center;
+}
+
+.footer-brand {
+  color: var(--white);
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .nav-links a:not(.btn) {
+    display: none;
+  }
+
+  .hero-grid,
+  .feature-grid,
+  .registration-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards,
+  .steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-box {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar {
+    font-size: 0.82rem;
+  }
+
+  .nav {
+    min-height: 68px;
+  }
+
+  .brand span:last-child {
+    font-size: 0.9rem;
+  }
+
+  .nav-links .btn {
+    padding: 11px 16px;
+    font-size: 0.86rem;
+  }
+
+  .hero {
+    padding: 64px 0 58px;
+  }
+
+  section {
+    padding: 62px 0;
+  }
+
+  .cards,
+  .steps,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card,
+  .form-card,
+  .info-box {
+    padding: 24px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    Inscrições abertas para a próxima turma • Vagas limitadas
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir para o início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span>Capacitação em Discipulado</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#projeto">O projeto</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a class="btn btn-primary" href="#inscricao">Inscreva-se</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Formação • Cuidado • Multiplicação</span>
+          <h1>Formando discípulos que formam novos discípulos</h1>
+          <p>
+            Uma jornada bíblica e prática para pastores, líderes e cristãos que desejam
+            desenvolver uma cultura de discipulado intencional, cuidado mútuo e multiplicação.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#inscricao">Quero participar</a>
+            <a class="btn btn-secondary" href="#projeto">Conhecer o projeto</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>Uma capacitação para quem deseja:</h2>
+          <ul class="hero-list">
+            <li><span class="check" aria-hidden="true">✓</span><span>Compreender o discipulado como estilo de vida.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Desenvolver relacionamentos discipuladores.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Formar líderes e multiplicadores.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Implantar pequenos grupos multiplicadores.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Aplicar o aprendizado na igreja local.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="projeto">
+      <div class="container">
+        <div class="section-header center">
+          <span class="eyebrow">O projeto</span>
+          <h2>O discipulado no centro da missão</h2>
+          <p class="lead">
+            Mais do que um curso, esta é uma jornada de formação, acompanhamento e aplicação prática,
+            criada para ajudar igrejas e líderes a cuidarem de pessoas e desenvolverem novos discípulos.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-number">01</div>
+            <h3>Fundamento bíblico</h3>
+            <p>
+              Compreenda o modelo de Jesus e os princípios que sustentam uma vida discipuladora.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02</div>
+            <h3>Formação integral</h3>
+            <p>
+              Desenvolva caráter, conhecimento e prática por meio da proposta Ser, Saber e Fazer.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03</div>
+            <h3>Multiplicação</h3>
+            <p>
+              Aprenda a formar novos líderes, novos grupos e novos discípulos de maneira intencional.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="light-section" id="conteudo">
+      <div class="container feature-grid">
+        <div>
+          <span class="eyebrow">Conteúdo da jornada</span>
+          <h2>Conhecimento que se transforma em prática</h2>
+          <p class="lead">
+            Cada tema foi organizado para conduzir o participante da compreensão bíblica
+            à aplicação no contexto da igreja local.
+          </p>
+        </div>
+
+        <div class="feature-panel">
+          <h3>Principais temas</h3>
+          <ul>
+            <li>O chamado para fazer discípulos</li>
+            <li>O exemplo discipulador de Jesus</li>
+            <li>As três dimensões do discipulado</li>
+            <li>Relacionamentos discipuladores</li>
+            <li>Mentoria, cuidado e prestação de contas</li>
+            <li>Formação e desenvolvimento de líderes</li>
+            <li>Pequenos grupos multiplicadores</li>
+            <li>Evangelização, missão e multiplicação</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="como-funciona">
+      <div class="container">
+        <div class="section-header center">
+          <span class="eyebrow">Como funciona</span>
+          <h2>Uma jornada simples, acompanhada e aplicável</h2>
+          <p class="lead">
+            A formação combina encontros, conteúdo, mentoria e prática ministerial.
+          </p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <strong>1. Formação</strong>
+            <p>Encontros de ensino, reflexão e alinhamento.</p>
+          </div>
+          <div class="step">
+            <strong>2. Conteúdo</strong>
+            <p>Aulas, leituras e materiais de apoio.</p>
+          </div>
+          <div class="step">
+            <strong>3. Mentoria</strong>
+            <p>Acompanhamento em pequenos grupos.</p>
+          </div>
+          <div class="step">
+            <strong>4. Aplicação</strong>
+            <p>Plano de ação para a realidade da igreja.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>O discipulado começa com uma decisão</h2>
+        <p>
+          Decida caminhar intencionalmente com pessoas, formar novos líderes
+          e participar de um movimento de cuidado e multiplicação.
+        </p>
+        <a class="btn btn-primary" href="#inscricao">Garantir minha vaga</a>
+      </div>
+    </section>
+
+    <section class="registration" id="inscricao">
+      <div class="container registration-grid">
+        <aside class="info-box">
+          <span class="eyebrow">Inscrições abertas</span>
+          <h2>Faça sua inscrição</h2>
+          <p>
+            Preencha o formulário. Ao finalizar, sua inscrição será enviada pelo WhatsApp
+            para a equipe responsável.
+          </p>
+
+          <ul class="info-list">
+            <li><span class="check" aria-hidden="true">✓</span><span>Formação para pastores, líderes e membros.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Material de apoio e atividades práticas.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Acompanhamento durante a jornada.</span></li>
+            <li><span class="check" aria-hidden="true">✓</span><span>Certificação conforme critérios do projeto.</span></li>
+          </ul>
+        </aside>
+
+        <div class="form-card">
+          <h3>Formulário de inscrição</h3>
+          <p>Informe seus dados para manifestar interesse na próxima turma.</p>
+
+          <form id="registrationForm">
+            <div class="form-row">
+              <div>
+                <label for="nome">Nome completo *</label>
+                <input id="nome" name="nome" type="text" autocomplete="name" required />
+              </div>
+
+              <div>
+                <label for="telefone">WhatsApp *</label>
+                <input
+                  id="telefone"
+                  name="telefone"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel"
+                  placeholder="(00) 00000-0000"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email">E-mail *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+
+              <div>
+                <label for="cidade">Cidade/UF *</label>
+                <input id="cidade" name="cidade" type="text" placeholder="Ex.: Rio de Janeiro/RJ" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="igreja">Igreja ou organização</label>
+                <input id="igreja" name="igreja" type="text" />
+              </div>
+
+              <div>
+                <label for="funcao">Função ministerial</label>
+                <select id="funcao" name="funcao">
+                  <option value="">Selecione</option>
+                  <option>Pastor(a)</option>
+                  <option>Líder ministerial</option>
+                  <option>Líder de pequeno grupo</option>
+                  <option>Professor(a)</option>
+                  <option>Plantador(a) de igreja</option>
+                  <option>Membro da igreja</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="interesse">Por que você deseja participar?</label>
+              <textarea id="interesse" name="interesse" placeholder="Conte-nos brevemente sobre seu interesse."></textarea>
+            </div>
+
+            <label class="consent">
+              <input type="checkbox" id="consentimento" required />
+              <span>
+                Autorizo o uso dos dados informados exclusivamente para contato,
+                inscrição e comunicação sobre esta capacitação.
+              </span>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Enviar inscrição pelo WhatsApp</button>
+
+            <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-brand">Capacitação em Discipulado</div>
+      <p>Formando discípulos que formam novos discípulos.</p>
+    </div>
+  </footer>
+  <script>
+/*
+ * CONFIGURAÇÃO OBRIGATÓRIA
+ * Troque o número abaixo pelo WhatsApp responsável pelas inscrições.
+ * Use somente números, incluindo código do país (55) e DDD.
+ * Exemplo: 5521999999999
+ */
+const WHATSAPP_NUMBER = "5500000000000";
+
+const form = document.getElementById("registrationForm");
+const statusBox = document.getElementById("formStatus");
+
+function showStatus(message, type) {
+  statusBox.textContent = message;
+  statusBox.className = `form-status ${type} is-visible`;
+}
+
+form.addEventListener("submit", function handleSubmit(event) {
+  event.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+
+  if (WHATSAPP_NUMBER === "5500000000000") {
+    showStatus(
+      "Configure o número do WhatsApp em assets/js/script.js antes de publicar o site.",
+      "error"
+    );
+    return;
+  }
+
+  const data = new FormData(form);
+
+  const message = [
+    "*NOVA INSCRIÇÃO — CAPACITAÇÃO EM DISCIPULADO*",
+    "",
+    `*Nome:* ${data.get("nome")}`,
+    `*WhatsApp:* ${data.get("telefone")}`,
+    `*E-mail:* ${data.get("email")}`,
+    `*Cidade/UF:* ${data.get("cidade")}`,
+    `*Igreja/Organização:* ${data.get("igreja") || "Não informado"}`,
+    `*Função ministerial:* ${data.get("funcao") || "Não informado"}`,
+    `*Motivação:* ${data.get("interesse") || "Não informado"}`
+  ].join("\n");
+
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  showStatus(
+    "Seus dados foram organizados. O WhatsApp será aberto para concluir o envio.",
+    "success"
+  );
+
+  window.open(url, "_blank", "noopener,noreferrer");
+});
+
+  </script>
+</body>
+</html>
