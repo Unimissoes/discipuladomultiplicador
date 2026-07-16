@@ -1,4 +1,4 @@
-# Capacitação em Discipulado
+# Discipulado Multiplicador
 
 Landing page estática para divulgação e inscrição na **Capacitação em Discipulado**.
 
